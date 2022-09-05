@@ -99,19 +99,36 @@
 # =============================================================================
 
 # =============================================================================
-# # Exercício 3
+# # Exercício 3 - Substituir nan de mulher pela média de idades das mulheres
+# # e dos homens pela média dos homens
 # import pandas as pd
 # titanic = pd.read_csv("titanic.csv", sep=',')
-# 
+
 # def media(idades):
 #     return idades["Age"].mean()
-# 
+
 # idade_geral = titanic.groupby("Sex").apply(media)
-# print(idade_geral[1])
-# 
+
 # def preenche_idade(linha):
-# idade=linha["Age"]
-#     if pandas.isnull(idade):
-#         if linha["Sex"]=="female"
-#         linha["Age"] = idade_geral[0]
+#     idade=linha["Age"]
+#     sexo=linha["Sex"]
+#     if pd.isnull(idade):
+#         if sexo == "female":
+#             return idade_geral[0]
+#         else:
+#             return idade_geral[1]
+#     else:
+#         return idade
+    
+# idades_com_media = titanic.apply(preenche_idade,axis=1)
+# titanic["Age"]=idades_com_media
+# print("""
+# Quantidade de nulos após o preenchimento: {}
+# """.format(titanic.Age.isnull().sum()))
+# =============================================================================
+
+# =============================================================================
+# # Para salvar
+# titanic.to_csv("titanic_2_aula.csv", index=False)
+# titanic.info()
 # =============================================================================
