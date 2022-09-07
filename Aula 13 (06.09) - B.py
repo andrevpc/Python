@@ -114,11 +114,18 @@
 # plt.show()
 # =============================================================================
 
-# Exercício 3 - Quantidade de pessoas por idade, diferenciando por sexo
-import pandas as pd
-import matplotlib.pyplot as plt
-titanic = pd.read_csv('titanic.csv')
-x = titanic.groupby("Age")["PassengerId"].count()
-y = titanic.Age.count
-print(y)
-plt.plot(x)
+# =============================================================================
+# # Exercício 3 - Quantidade de pessoas por idade, diferenciando por sexo
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# titanic = pd.read_csv('titanic.csv')
+# homens = titanic[titanic["Sex"] == "male"]
+# mulheres = titanic[titanic["Sex"] == "female"]
+# idade_homens = homens.groupby('Age')["PassengerId"].count()
+# idade_mulheres = mulheres.groupby("Age")["PassengerId"].count()
+# idade_homens = idade_homens.reset_index()
+# idade_mulheres = idade_mulheres.reset_index()
+# plt.scatter(idade_homens["Age"], idade_homens["PassengerId"], label = "Homem")
+# plt.scatter(idade_mulheres["Age"], idade_mulheres["PassengerId"], label = "Mulher")
+# plt.legend()
+# =============================================================================
