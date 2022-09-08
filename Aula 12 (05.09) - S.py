@@ -4,7 +4,7 @@
 # import random
 # 
 # moedas = [1,1,1,1,1,1,1,1,1,1,1]
-# moedas.insert(random.randint(0, 11),2)
+# moedas.insert(random.randint(0, 12),2)
 # 
 # print(moedas)
 # for i in range(1):
