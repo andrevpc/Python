@@ -51,7 +51,8 @@
 # plt.plot([np.mean(y)+np.std(y)]*21, color = 'b', linestyle = '--')
 # plt.plot([np.mean(y)-np.std(y)]*21, color = 'b', linestyle = '--')
 # plt.grid(linestyle='dashed')
-# plt.show()
+# plt.xlim(0,20)
+# plt.ylim(0,1)
 # =============================================================================
 
 # =============================================================================
