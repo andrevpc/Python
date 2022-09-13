@@ -96,3 +96,14 @@
 # print("O menor número é: ", min(dic, key=dic.get))
 # =============================================================================
 
+# =============================================================================
+# # Exercício 6 - Array 5x5 com números inteiros aleatórios, utilize uma condição para
+# # substituir os números impares por 0
+# import numpy as np
+# array = np.random.randint(1,100,25)
+# print(array.reshape((5,5)))
+# for i in range(np.prod(array.shape)):
+#     if array[i]%2 != 0:
+#         array[i] = 0
+# print(array.reshape((5,5)))
+# =============================================================================
