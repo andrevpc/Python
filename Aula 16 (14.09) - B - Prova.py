@@ -20,26 +20,22 @@
 # b = 0
 #     
 # for i in range(nr):
-#     flu = int(input('''Resultado da partida para Fluminense
+#     flu = int(input(print('''Resultado da partida para Fluminense
 #           1 - Vitória
 #           2 - Derrota
-#           3 - Empate
-#           '''))
-#     cor = int(input('''Resultado da partida para Corinthians
+#           3 - Empate''')))
+#     cor = int(input(print('''Resultado da partida para Corinthians
 #           1 - Vitória
 #           2 - Derrota
-#           3 - Empate
-#           '''))
-#     vas = int(input('''Resultado da partida para Flamengo
+#           3 - Empate''')))
+#     vas = int(input(print('''Resultado da partida para Flamengo
 #           1 - Vitória
 #           2 - Derrota
-#           3 - Empate
-#           '''))
-#     pal = int(input('''Resultado da partida para Palmeiras
+#           3 - Empate''')))
+#     pal = int(input(print('''Resultado da partida para Palmeiras
 #           1 - Vitória
 #           2 - Derrota
-#           3 - Empate
-#           '''))
+#           3 - Empate''')))
 #     if pal == 1:
 #         ppal += 3
 #     elif pal == 2:
@@ -160,84 +156,58 @@
 # =============================================================================
 
 # =============================================================================
-# # Exercício 6 - Correção Thiago
-# def codificacao(senha: str) -> str:
-#     novaSenha = ""
-#     for char in list(senha):
-#         if 97 <= ord(char) and ord(char) <= 122:
-#             toBin = list(str(ord(char) - 97))
-#         else:
-#             toBin = [char]
-#         for num in toBin:
-#             newChar = bin(int(num)).replace("0b", "")
-#             while len(newChar) < 4:
-#                 newChar = "0" + newChar
-#             novaSenha += newChar + "_"
-#     return novaSenha[:-1]
-# 
-# senha = input("Insira sua senha: ")
-# senhaNova = codificacao(senha)
-# print(senhaNova)
-# =============================================================================
-
-# =============================================================================
 # # Exercício 7
 # lista=[]
-# menu = int(input("""1 - Adicionar
-# 2 - Conferir a média de um aluno
-# """))
-# if menu == 1:
-#     qnt = int(input("Insira a quantidade de alunos que pretende colocar: "))
-#     arquivo = open("arquivo.txt", "a")
-#     for i in range(qnt):
-#         arquivo.write(input("Coloque o nome do aluno: "))
-#         arquivo.write("\n")
-#         arquivo.write(input("Insira a nota 1: "))
-#         arquivo.write("\n")
-#         arquivo.write(input("Insira a nota 2: "))
-#         arquivo.write("\n")
-#     arquivo.close()
-# else:
-#     arquivo = open("arquivo.txt", "r")
-#     for linha in arquivo:
-#         lista.append(linha.rstrip('\n'))
-#     print("Os alunos são: ")
-#     for i in range(0, len(lista), 3): 
-#         print(lista[i], "\n")
-#     nome = input("Selecione um aluno: \n")
-#     ind = lista.index(nome)
-#     print(f"A média do {nome} é {(float(lista[ind+1]) + float(lista[ind+2]))/2}")
+# arquivo = open("arquivo.txt", "w")
+# arquivo.write('''André
+# 8.9
+# 9.7
+# Peterson
+# 10
+# 9.8
+# Kaiky
+# 9.5
+# 8.5
+# Bruno
+# 9.9
+# 9.3''')
+# arquivo.close()
+# 
+# arquivo = open("arquivo.txt", "r")
+# for linha in arquivo:
+#     lista.append(linha.rstrip('\n'))
+#     
+# nome = input("Selecione um aluno: André, Peterson, Kaiky e Bruno\n")
+# ind = lista.index(nome)
+# print(f"A média do {nome} é {(float(lista[ind+1]) + float(lista[ind+2]))/2}")
 # =============================================================================
 
-# =============================================================================
-# # Exercício 8
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# 
-# netflix = pd.read_csv("netflix_titles.csv", sep=',')
-# netflix = netflix.dropna()
-# 
-# 
-# netflixbr = netflix[(netflix["country"] == "Brazil")]
-# netflixbr = netflixbr[netflixbr["duration"].str.contains("min")]
-# netflixbr = netflixbr.reset_index()
-# netflixbr["duration"]= netflixbr["duration"].str.replace(" min", "")
-# netflixbr['duration']= netflixbr['duration'].astype(int)
-# netflixbr = netflixbr.sort_values(by='duration', ascending=False)
-# netflixbr = netflixbr.head(5)
-# 
-# 
-# netflix = netflix[((netflix["country"] == "United States") & ((netflix["release_year"]==2015) | (netflix["release_year"]==2016) | (netflix["release_year"]==2017) | (netflix["release_year"]==2018) | (netflix["release_year"]==2019) | (netflix["release_year"]==2020)))]
-#         
-# a2015 = netflix.release_year[netflix["release_year"] == 2015].count()
-# a2016 = netflix.release_year[netflix["release_year"] == 2016].count()
-# a2017 = netflix.release_year[netflix["release_year"] == 2017].count()
-# a2018 = netflix.release_year[netflix["release_year"] == 2018].count()
-# a2019 = netflix.release_year[netflix["release_year"] == 2019].count()
-# a2020 = netflix.release_year[netflix["release_year"] == 2020].count()
-# 
-# plt.bar(("2015", "2016", "2017", "2018", "2019", "2020"), (a2015,a2016,a2017,a2018,a2019,a2020))
-# =============================================================================
+# Exercício 8
+import pandas as pd
+import matplotlib.pyplot as plt
+
+netflix = pd.read_csv("netflix_titles.csv", sep=',')
+netflix = netflix.dropna()
+
+
+netflixbr = netflix[(netflix["country"] == "Brazil")]
+netflixbr = netflixbr[netflixbr["duration"].str.contains("min")]
+netflixbr = netflixbr.reset_index()
+netflixbr["duration"]= netflixbr[netflixbr["duration"].str.replace(" min", "")]
+netflixbr = netflixbr.sort_values([int(netflixbr["duration"])], axis=0, ascending=True, inplace=True)
+netflixbr = netflixbr.head()
+
+
+netflix = netflix[((netflix["country"] == "United States") & ((netflix["release_year"]==2015) | (netflix["release_year"]==2016) | (netflix["release_year"]==2017) | (netflix["release_year"]==2018) | (netflix["release_year"]==2019) | (netflix["release_year"]==2020)))]
+        
+a2015 = netflix.release_year[netflix["release_year"] == 2015].count()
+a2016 = netflix.release_year[netflix["release_year"] == 2016].count()
+a2017 = netflix.release_year[netflix["release_year"] == 2017].count()
+a2018 = netflix.release_year[netflix["release_year"] == 2018].count()
+a2019 = netflix.release_year[netflix["release_year"] == 2019].count()
+a2020 = netflix.release_year[netflix["release_year"] == 2020].count()
+
+plt.bar(("2015", "2016", "2017", "2018", "2019", "2020"), (a2015,a2016,a2017,a2018,a2019,a2020))
 
 # =============================================================================
 # # Exercício 9
