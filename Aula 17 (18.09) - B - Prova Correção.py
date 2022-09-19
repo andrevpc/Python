@@ -83,27 +83,30 @@
 
 # =============================================================================
 # # Exercício 6
-# senha = input("Insira a senha: ").lower()
-# senhabin=[]
-# binario = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"]
-# for i in list(senha):
-#     if 97<= ord(i) and ord(i) <=122:
-#         senhabin.append(list(str(ord(i)-97)))
-#     elif i.isdigit():
-#         senhabin.append(i)
-#     else:
-#         senhabin.append("0")
-# 
-# binzin = []
-# for lista in senhabin:
-#     for item in lista:
-#         binzin.append(item)
-#         
-# cod = ""
-# for i in binzin:
-#     cod += binario[int(i)] + "_"
+# def binario(senha):
+#     senhabin=[]
+#     binario = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"]
+#     for i in list(senha):
+#         if 97<= ord(i) and ord(i) <=122:
+#             senhabin.append(list(str(ord(i)-97)))
+#         elif i.isdigit():
+#             senhabin.append(i)
+#         else:
+#             senhabin.append("0")
 #     
-# print(cod[:-1])
+#     binzin = []
+#     for lista in senhabin:
+#         for item in lista:
+#             binzin.append(item)
+#             
+#     cod = ""
+#     for i in binzin:
+#         cod += binario[int(i)] + "_"
+#         
+#     print(cod[:-1])
+# 
+# senha = input("Insira a senha: ").lower()
+# binario(senha)
 # =============================================================================
     
 # =============================================================================
