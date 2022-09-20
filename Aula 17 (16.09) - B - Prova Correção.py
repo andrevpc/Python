@@ -85,7 +85,7 @@
 # # Exercício 6
 # def binario(senha):
 #     senhabin=[]
-#     binario = ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"]
+#     binario = ("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001")
 #     for i in list(senha):
 #         if 97<= ord(i) and ord(i) <=122:
 #             senhabin.append(list(str(ord(i)-97)))
