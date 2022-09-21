@@ -101,27 +101,43 @@
 #                     break
 # =============================================================================
 
-# =============================================================================
-# # Desafio 2 - lig - 4
-# lin1= [' ',' ',' ',' ',' ',' ',' ',' ']
-# lin2= [' ',' ',' ',' ',' ',' ',' ',' ']
-# lin3= [' ',' ',' ',' ',' ',' ',' ',' ']
-# lin4= [' ',' ',' ',' ',' ',' ',' ',' ']
-# lin5= [' ',' ',' ',' ',' ',' ',' ',' ']
-# lin6= [' ',' ',' ',' ',' ',' ',' ',' ']
-# 
-# linhas = [lin1,lin2,lin3,lin4,lin5,lin6]
-# 
-# print('  1  ','2  ','3  ','4  ','5  ','6  ','7')
-# 
-# for i in linhas:
-#     for j in i:
-#         print('| ',j,end='')
-#     print("")
-#     
-# int(input("Escolha o x: "))
-# usuario = 1
-# if usuario == 1:
-#     if x == 1:
-#         linhas.
-# =============================================================================
+# Desafio 2 - lig - 4 
+
+def tabuleiro(j):
+    print("          Jogador ", j)
+    print('  1  ','2  ','3  ','4  ','5  ','6  ','7')
+    for i in linhas:
+        for j in i:
+            print('| ',j,end='')
+        print("")
+
+def jogada(jogador):    
+    x = int(input("Escolha a coluna: "))
+    for i in range(5,-1,-1):                
+        if linhas[i][x-1] == ' ':
+            linhas[i][x-1] = jogador
+            break
+
+# def vitoria():
+#     for i in limhas
+        
+lin1= [' ',' ',' ',' ',' ',' ',' ',' ']
+lin2= [' ',' ',' ',' ',' ',' ',' ',' ']
+lin3= [' ',' ',' ',' ',' ',' ',' ',' ']
+lin4= [' ',' ',' ',' ',' ',' ',' ',' ']
+lin5= [' ',' ',' ',' ',' ',' ',' ',' ']
+lin6= [' ',' ',' ',' ',' ',' ',' ',' ']
+
+linhas = [lin1,lin2,lin3,lin4,lin5,lin6]
+j = "x"
+
+tabuleiro(j)
+
+while 1:
+    if j == "o":
+        j="x"
+    else:
+        j="o"
+    
+    jogada(j)
+    tabuleiro(j)
