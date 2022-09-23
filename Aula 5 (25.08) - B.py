@@ -1,3 +1,5 @@
+# text to ascii
+
 # =============================================================================
 # # Desafio 1 - jogo de anagrama
 # import random
@@ -113,11 +115,15 @@ def tabuleiro(j):
 
 def jogada(jogador):    
     x = int(input("Escolha a coluna: "))
-    for i in range(5,-1,-1):                
-        if linhas[i][x-1] == ' ':
-            linhas[i][x-1] = jogador
-            break
-
+    if linhas[0][x-1] == " ":
+        for i in range(5,-1,-1):                
+            if linhas[i][x-1] == ' ':
+                linhas[i][x-1] = jogador
+                break
+    else:
+        print("Coluna já preenchido! Escolha outra")
+        jogada(jogador)
+        
 def vitoria():
     for i in linhas:
         for j in range(4):
@@ -138,6 +144,14 @@ def vitoria():
         for i in range(3):
             if linhas[5-i][j] == linhas[4-i][j+1] == linhas[3-i][j+2] == linhas[2-i][j+3] != " ":
                 return 1
+            
+print('''
+      _               _     
+ ___/__) ,           /   / 
+(, /        _   __  /___/_ 
+  /    _(_ (_/_        /   
+ (_____   .-/         /    
+         (_/               ''')
         
 lin1= [' ',' ',' ',' ',' ',' ',' ']
 lin2= [' ',' ',' ',' ',' ',' ',' ']
