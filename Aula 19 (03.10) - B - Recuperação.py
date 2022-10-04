@@ -96,7 +96,6 @@
 #         v = v - int(n5)*5
 #         n1 = v/1
 #         v = v - int(n1)
-#         print(n50)
 #         print("Notas para saque:")
 #         print(int(n100), " notas de R$100,00")
 #         print(int(n50), " notas de R$50,00")
@@ -125,4 +124,25 @@
 # plt.xticks(rotation=45)
 # plt.ylabel("Strengh mean")
 # plt.grid(linestyle='-')
+# 
+# imortais = sh.loc[sh["has_immortality"] == 1]
+# imortais = imortais.sort_values(by = "combat_score", ascending=False)
+# imortais = imortais.head(5)
+# imortais = imortais.reset_index()
+# print("Os melhores imortais em combate são:")
+# for i in range(5):
+#     print(1+i,"  -  ", imortais['name'][i])
 # =============================================================================
+
+# Exercício 7
+import random
+
+listausp = []
+with open("bancodepalavras.txt") as arquivo:
+    for linha in arquivo:
+        palavras = linha.strip().split()
+        listausp.append(palavras[0])
+n = random.randint(0,245365)
+palavraran = (listausp[n])
+listapalavraran = list(str(palavraran))
+print("A palavra é: ",listapalavraran)
